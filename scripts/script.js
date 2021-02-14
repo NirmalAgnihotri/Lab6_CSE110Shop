@@ -17,12 +17,12 @@ window.addEventListener('DOMContentLoaded', () => {
   if(currCart){
     currCartObj = currCart.split(',');
     initCount = currCartObj.length;
+    cartItems = currCartObj;
   }
   cartDisplay.innerHTML = initCount;
   let products = localStorage.getItem("products");
   let productsObj = JSON.parse(products);
   let productContainer = document.getElementById("product-list");
-  console.log(currCartObj);
   for(let i = 0; i < productsObj.length; ++i){
     let toAppend = document.createElement('product-item');
     toAppend.id = productsObj[i].id;

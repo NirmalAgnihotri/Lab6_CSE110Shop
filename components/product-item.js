@@ -45,13 +45,11 @@ class ProductItem extends HTMLElement {
 
       }
       else if(addBtn.innerHTML == "Remove From Cart"){
-        if(cartCount!== 0){
-          cartCount--;
-        }
-        cartDisplay.innerHTML = cartCount;
         addBtn.innerHTML = "Add to Cart";
         cartItems.splice(cartItems.indexOf(this.id), 1);
-        console.log(carItems);
+        cartCount = cartItems.length;
+        cartDisplay.innerHTML = cartCount;
+
       }
       localStorage.setItem("cart", cartItems.toString());
 
